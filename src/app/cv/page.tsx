@@ -1,7 +1,7 @@
 // src/app/cv/page.tsx
 'use client'; // <-- Animasyonlar için bu satır şart!
 
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { FaDownload } from 'react-icons/fa'; // Buton için indirme ikonu
 
 export default function CVPage() {
@@ -25,14 +25,14 @@ export default function CVPage() {
   };
 
   // 2. İçerideki elemanlar için animasyon (h1, p, a)
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 100 } // Esnek bir animasyon
-    }
-  };
+  const itemVariants: Variants = { // <-- DÜZELTME BURADA
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 100 }
+  }
+};
 
   return (
     // İçeriği ortalayan, kart görünümü veren ve animasyonu başlatan ana div
