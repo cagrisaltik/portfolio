@@ -2,7 +2,7 @@
 'use client'; // <-- Form state'i ve gönderimi için şart
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 
 export default function IletisimPage() {
   // Form verilerini tutmak için state
@@ -34,14 +34,14 @@ export default function IletisimPage() {
     }
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 100 }
-    }
-  };
+  const itemVariants: Variants = { // <-- DÜZELTME BURADA
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 100 }
+  }
+};
 
   // Formdaki her değişiklikte state'i güncelle
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
