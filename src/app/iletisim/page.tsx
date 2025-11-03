@@ -143,7 +143,7 @@ export default function IletisimPage() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="text-center">
-          <button
+          <motion.button
             type="submit"
             disabled={status.loading} // Gönderim sırasında butonu kilitle
             className="px-10 py-3 bg-cyan-600 text-white font-semibold rounded-lg shadow-lg hover:bg-cyan-700 transition-all transform disabled:opacity-50 disabled:cursor-not-allowed"
@@ -151,7 +151,7 @@ export default function IletisimPage() {
             whileTap={status.loading ? {} : { scale: 0.95 }}
           >
             {status.loading ? 'Gönderiliyor...' : 'Gönder'}
-          </button>
+          </motion.button>
         </motion.div>
       </form>
 
