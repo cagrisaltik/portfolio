@@ -6,7 +6,8 @@ import { FaStar, FaCode } from "react-icons/fa";
 import { 
   motion, 
   useMotionValue, 
-  useTransform 
+  useTransform,
+  type Variants
 } from "framer-motion";
 import React, { useRef } from "react"; 
 
@@ -19,7 +20,7 @@ interface RepoKartProps {
 }
 
 // RepoList tarafından tetiklenecek giriş animasyonu
-const itemVariants = {
+const itemVariants: Variants = { // <-- DÜZELTME BURADA
   hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: { 
     opacity: 1, 
